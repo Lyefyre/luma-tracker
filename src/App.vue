@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <luma-header></luma-header>
+    <div>{{ number }}</div>
+    <tracker></tracker>
+    <luma-footer></luma-footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import lumaHeader from "./components/lumaHeader.vue";
+import lumaFooter from "./components/lumaFooter.vue";
+import Tracker from "./components/Tracker.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    lumaHeader,
+    lumaFooter,
+    Tracker
+  },
+  data() {
+    return {
+      number: 0 
+    }
   }
 };
 </script>
 
-<style>
+<style scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0px;
 }
 </style>
