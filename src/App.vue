@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
     <luma-header></luma-header>
-    <div>{{ number }}</div>
-    <tracker></tracker>
+    <div id="number">
+      <p id="nick">{{ number }}</p>
+    </div>
+    <tracker @numberChanged="number = $event"></tracker>
     <luma-footer></luma-footer>
   </div>
 </template>
@@ -22,8 +24,8 @@ export default {
   },
   data() {
     return {
-      number: 0 
-    }
+      number: 0
+    };
   }
 };
 </script>
@@ -32,5 +34,15 @@ export default {
 #app {
   text-align: center;
   margin: 0px;
+}
+
+#number {
+  width: fit-content;
+  height: fit-content;
+  display: inline-block;
+}
+
+#nick {
+  font-size: 102px;
 }
 </style>
