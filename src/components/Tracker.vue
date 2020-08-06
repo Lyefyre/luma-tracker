@@ -11,6 +11,7 @@
 export default {
   data() {
     return {
+      // Initialize value to 0
       number: 0
     };
   },
@@ -32,6 +33,7 @@ export default {
       this.emit();
     },
     emit() {
+      // Send data to parent component
       this.$emit("numberChanged", this.number);
     }
   }

@@ -24,13 +24,13 @@ export default {};
 
 #imageContainer {
   width: 100%;
-  Border: solid;
   }
 
 #text {
   width: 100%;
   height: 100%;
   font-size: 64px;
-  Border: solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
 }
 </style>
