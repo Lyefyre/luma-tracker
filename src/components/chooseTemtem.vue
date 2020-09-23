@@ -5,15 +5,16 @@
         <span>Resume existing hunt</span>
       </button>
 
-      <b-dropdown-item
-        aria-role="listitem"
-        v-bind:key="object"
-        v-for="object in data.results"
-      >{{ object }}</b-dropdown-item>
+      <b-dropdown-item aria-role="listitem" v-bind:key="object" v-for="object in data.results">
+        <b-field>
+          <b-input disabled v-bind="object"></b-input>
+        </b-field> {{ object.species }}
+      </b-dropdown-item>
+
     </b-dropdown>
     <b-button class="is-info">Start a new hunt</b-button>
     <div id="number">
-      <p id="nick" :key="value" v-for="value in data.numbers">{{ value }}</p>
+      <p id="nick">{{ object.value }}</p>
     </div>
     <div id="tracker">
       <div>
@@ -39,11 +40,11 @@ export default {
   data() {
     return {
       data: {
-        results: [],
-        numbers: []
+        results: []
       },
       total: 0,
-      value: 0
+      value: 0,
+      object: ""
     };
   },
   methods: {
@@ -56,8 +57,7 @@ export default {
           console.log(this.total);
           this.data.results = [];
           data.results.forEach(item => {
-            this.data.results.push(item.species);
-            this.data.numbers.push(item.value)
+            this.data.results.push(item);
           });
         })
         .catch(error => {
