@@ -1,9 +1,9 @@
 <template>
   <div id="tracker">
-    <b-button class="is-danger" @click="decrement2">-2</b-button>
-    <b-button class="is-danger" @click="decrement1" id="padding-red">-1</b-button>
-    <b-button class="is-success" @click="increment1" id="padding-green">+1</b-button>
-    <b-button class="is-success" @click="increment2">+2</b-button>
+    <b-button class="is-danger button" size="is-large" @click="decrement2">-2</b-button>
+    <b-button class="is-danger button" size="is-large" @click="decrement1" id="padding-red">-1</b-button>
+    <b-button class="is-success button" size="is-large" @click="increment1" id="padding-green">+1</b-button>
+    <b-button class="is-success button" size="is-large" @click="increment2">+2</b-button>
   </div>
 </template>
 
@@ -54,5 +54,10 @@ export default {
 #padding-green {
   margin-left: 15px;
   margin-right: 5px;
+}
+
+.button {
+  height: auto;
+  width: auto;
 }
 </style>

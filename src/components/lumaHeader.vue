@@ -29,7 +29,7 @@ export default {};
 #text {
   width: 100%;
   height: 100%;
-  font-size: 64px;
+  font-size: 32px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
 }

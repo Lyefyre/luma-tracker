@@ -2,6 +2,7 @@
   <div id="app">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
     <luma-header></luma-header>
+    <selector></selector>
     <div id="number">
       <p id="nick">{{ number }}</p>
     </div>
@@ -14,13 +15,15 @@
 import lumaHeader from "./components/lumaHeader.vue";
 import lumaFooter from "./components/lumaFooter.vue";
 import Tracker from "./components/Tracker.vue";
+import Selector from "./components/chooseTemtem.vue";
 
 export default {
   name: "App",
   components: {
     lumaHeader,
     lumaFooter,
-    Tracker
+    Tracker,
+    Selector
   },
   data() {
     return {
