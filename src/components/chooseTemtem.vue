@@ -7,14 +7,14 @@
 
       <b-dropdown-item aria-role="listitem" v-bind:key="object" v-for="object in data.results">
         <b-field>
-          <b-input disabled v-bind="object"></b-input>
-        </b-field> {{ object.species }}
+          <b-input v-bind="object"></b-input>
+        </b-field> {{ object.value }}
       </b-dropdown-item>
 
     </b-dropdown>
     <b-button class="is-info">Start a new hunt</b-button>
     <div id="number">
-      <p id="nick">{{ object.value }}</p>
+      <p id="nick">{{ object.species }}</p>
     </div>
     <div id="tracker">
       <div>
