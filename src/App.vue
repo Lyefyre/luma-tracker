@@ -1,35 +1,15 @@
 <template>
   <div id="app">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
-    <luma-header></luma-header>
-    <selector></selector>
-    <luma-footer></luma-footer>
+  <router-view></router-view>
   </div>
 </template>
 
 <script>
-import lumaHeader from "./components/lumaHeader.vue";
-import lumaFooter from "./components/lumaFooter.vue";
-import Selector from "./components/chooseTemtem.vue";
 
 export default {
   name: "App",
-  components: {
-    lumaHeader,
-    lumaFooter,
-    Selector
-  },
-  data() {
-    return {
-      number: 0
-    };
-  }
-};
+}
 </script>
 
 <style scoped>
-#app {
-  text-align: center;
-  margin: 0px;
-}
 </style>

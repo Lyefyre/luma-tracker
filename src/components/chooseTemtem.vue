@@ -12,7 +12,7 @@
       </b-dropdown-item>
 
     </b-dropdown>
-    <b-button class="is-info">Start a new hunt</b-button>
+    <b-button class="is-info" @click="routing()">Start a new hunt</b-button>
     <div id="number">
       <p id="nick">{{ object.species }}</p>
     </div>
@@ -79,6 +79,9 @@ export default {
     },
     reset() {
       this.value = 0;
+    },
+    routing() {
+      this.$router.push('Overview');
     }
   }
 };

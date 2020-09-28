@@ -1,7 +1,7 @@
 <template>
   <div id="footer">
     <p id="text">Made by Valentin Schär</p>
-    </div>
+  </div>
 </template>
 
 <script>
