@@ -2,14 +2,13 @@
   <div id="overview">
     <luma-header></luma-header>
     <div class="container">
-      <div class="square" :key="key" v-for="key in this.species.name">
-        <img
-          id="Oree"
-          src="https://static.wikia.nocookie.net/temtem_gamepedia_en/images/9/99/Oree.png"
-        />
-        <b-button class="is-dark space">{{ species.name[count] }}</b-button>
+      <div class="square" :key="key" v-for="key in this.results.name">
+        <square
+          :count="amount++"
+          :name="results.name"
+          :image="results.image"
+        ></square>
       </div>
-      <div @click="increment()">HEY</div>
     </div>
     <luma-footer></luma-footer>
   </div>
@@ -18,27 +17,46 @@
 <script>
 import lumaHeader from "./../components/lumaHeader.vue";
 import lumaFooter from "./../components/lumaFooter.vue";
-//import Axios from "axios";
+import square from "./../components/square.vue";
+import axios from "axios";
 
 export default {
   components: {
     lumaHeader,
-    lumaFooter
+    lumaFooter,
+    square
   },
 
   data() {
     return {
-      species: {
-          name: ["Oree", "Zaobian", "Kaku", "Saku"]
+      results: {
+        name: [],
+        image: []
       },
-      count: 0
+      amount: 0,
+      props: {
+        count: Number,
+        name: String,
+        image: String
+      }
     };
   },
-
-  methods: {
-    increment() {
-      this.count += 1;
-    }
+  created() {
+    let host = `http://localhost:8000/counter/`;
+    axios
+      .get(`${host}`)
+      .then(({ data }) => {
+        this.results.name = [];
+        this.results.image = [];
+        data.results.forEach(item => {
+          this.results.name.push(item.species.name);
+          this.results.image.push(item.species.image_small);
+        });
+      })
+      .catch(error => {
+        this.data.results = "Error!";
+        throw error;
+      });
   }
 };
 </script>

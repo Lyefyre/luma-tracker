@@ -5,12 +5,16 @@
         <span>Resume existing hunt</span>
       </button>
 
-      <b-dropdown-item aria-role="listitem" v-bind:key="object" v-for="object in data.results">
+      <b-dropdown-item
+        aria-role="listitem"
+        v-bind:key="object"
+        v-for="object in data.results"
+      >
         <b-field>
           <b-input v-bind="object"></b-input>
-        </b-field> {{ object.value }}
+        </b-field>
+        {{ object.value }}
       </b-dropdown-item>
-
     </b-dropdown>
     <b-button class="is-info" @click="routing()">Start a new hunt</b-button>
     <div id="number">
@@ -18,17 +22,33 @@
     </div>
     <div id="tracker">
       <div>
-        <b-button class="is-danger button" size="is-large" @click="decrement2()">-2</b-button>
-        <b-button class="is-danger button" size="is-large" @click="decrement1()" id="padding-red">-1</b-button>
+        <b-button class="is-danger button" size="is-large" @click="decrement2()"
+          >-2</b-button
+        >
+        <b-button
+          class="is-danger button"
+          size="is-large"
+          @click="decrement1()"
+          id="padding-red"
+          >-1</b-button
+        >
         <b-button
           class="is-success button"
           size="is-large"
           @click="increment1()"
           id="padding-green"
-        >+1</b-button>
-        <b-button class="is-success button" size="is-large" @click="increment2()">+2</b-button>
+          >+1</b-button
+        >
+        <b-button
+          class="is-success button"
+          size="is-large"
+          @click="increment2()"
+          >+2</b-button
+        >
       </div>
-      <b-button class="is-dark button" size="is-large" @click="reset()">Reset Counter</b-button>
+      <b-button class="is-dark button" size="is-large" @click="reset()"
+        >Reset Counter</b-button
+      >
     </div>
   </div>
 </template>
@@ -81,7 +101,7 @@ export default {
       this.value = 0;
     },
     routing() {
-      this.$router.push('Overview');
+      this.$router.push("Overview");
     }
   }
 };

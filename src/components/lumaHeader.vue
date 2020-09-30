@@ -24,7 +24,7 @@ export default {};
 
 #imageContainer {
   width: 100%;
-  }
+}
 
 #text {
   width: 100%;

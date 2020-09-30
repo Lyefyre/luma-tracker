@@ -5,9 +5,7 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
@@ -20,7 +18,7 @@ export default {
 }
 
 #text {
-    width: 100%;
+  width: 100%;
   height: 100%;
   font-size: 32px;
   font-family: Arial, Helvetica, sans-serif;
