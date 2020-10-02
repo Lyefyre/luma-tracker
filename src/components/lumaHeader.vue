@@ -2,7 +2,6 @@
   <div id="center">
     <div id="imageContainer">
       <p id="text">Luma Tracker!</p>
-      <img src="../assets/spriole.png" alt="spriole" class="image" />
     </div>
   </div>
 </template>

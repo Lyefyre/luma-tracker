@@ -1,34 +1,34 @@
 <template>
-  <div id="overview">
-    <luma-header></luma-header>
-    <div class="container">
-      <div>Select the Temtem you want to hunt</div>
+  <div id="existingHunts">
+    <div v-if="temtemName == String">
+      Select the Temtem, who's hunt you want to resume
+    </div>
+    <div class="container" v-if="temtemName == String">
       <div class="square" :key="key" v-for="key in this.results.name">
-        <new-temtem-list
+        <huntedTemtem
+          @selectedTemtem="temtemName = $event"
+          @selectedTemtemValue="temtemValue = $event"
           :count="amount++"
           :name="results.name"
           :image="results.image"
           :value="results.counter"
-        ></new-temtem-list>
+        ></huntedTemtem>
       </div>
     </div>
-    <luma-footer></luma-footer>
+    <tracker v-if="temtemName !== String" :temtemValue="temtemValue"></tracker>
+    <div v-if="temtemName !== String">Currently Hunting: {{ temtemName }}</div>
   </div>
 </template>
 
 <script>
-import lumaHeader from "./../components/lumaHeader.vue";
-import lumaFooter from "./../components/lumaFooter.vue";
-import newTemtemList from "./../components/newTemtemList.vue";
 import axios from "axios";
-
+import huntedTemtem from "./../components/huntedTemtem.vue";
+import tracker from "./../components/tracker.vue";
 export default {
   components: {
-    lumaHeader,
-    lumaFooter,
-    newTemtemList
+    huntedTemtem,
+    tracker
   },
-
   data() {
     return {
       results: {
@@ -36,12 +36,16 @@ export default {
         counter: [],
         image: []
       },
+
+      temtemName: String,
+      temtemValue: Number,
       amount: 0,
       props: {
         count: Number,
         name: String,
         image: String,
-        value: Number
+        value: Number,
+        temtemValue: Number
       }
     };
   },
@@ -68,7 +72,7 @@ export default {
 </script>
 
 <style scoped>
-#overview {
+#existingHunts {
   margin: 0px;
   text-align: center;
 }
