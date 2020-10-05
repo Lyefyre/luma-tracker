@@ -17,20 +17,24 @@ export default {
   data() {
     return {
       huntName: String,
-      huntValue: Number
+      huntValue: Number,
+      backendID: Number
     };
   },
 
   methods: {
     resumeHunt() {
       console.log("Resuming hunt of: " + this.huntName);
+      console.log("BackendID: " + this.backendID);
       this.$emit("selectedTemtem", this.huntName);
       this.$emit("selectedTemtemValue", this.huntValue);
+      this.$emit("getBackendID", this.backendID);
     }
   },
   created() {
     this.huntName = this.name[this.count];
     this.huntValue = this.value[this.count];
+    this.backendID = this.count + 6;
   }
 };
 </script>

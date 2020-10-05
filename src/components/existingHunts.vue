@@ -8,6 +8,7 @@
         <huntedTemtem
           @selectedTemtem="temtemName = $event"
           @selectedTemtemValue="temtemValue = $event"
+          @getBackendID="backendID = $event"
           :count="amount++"
           :name="results.name"
           :image="results.image"
@@ -15,7 +16,13 @@
         ></huntedTemtem>
       </div>
     </div>
-    <tracker v-if="temtemName !== String" :temtemValue="temtemValue"></tracker>
+    <tracker
+      class="tracker"
+      v-if="temtemName !== String"
+      :temtemValue="temtemValue"
+      :temtemName="temtemName"
+      :backendID="backendID"
+    ></tracker>
     <div v-if="temtemName !== String">Currently Hunting: {{ temtemName }}</div>
   </div>
 </template>
@@ -39,13 +46,15 @@ export default {
 
       temtemName: String,
       temtemValue: Number,
+      backendID: Number,
       amount: 0,
       props: {
         count: Number,
         name: String,
         image: String,
         value: Number,
-        temtemValue: Number
+        temtemValue: Number,
+        backendID: Number
       }
     };
   },
@@ -85,6 +94,10 @@ export default {
 }
 
 .square {
+  display: inline-block;
+}
+
+.tracker {
   display: inline-block;
 }
 </style>

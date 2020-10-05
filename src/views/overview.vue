@@ -1,10 +1,13 @@
 <template>
   <div id="overview">
     <luma-header></luma-header>
-    <div class="container">
+    <div class="container" v-if="temtemName == String">
       <div>Select the Temtem you want to hunt</div>
       <div class="square" :key="key" v-for="key in this.results.name">
         <new-temtem-list
+          @selectedTemtem="temtemName = $event"
+          @selectedTemtemValue="temtemValue = $event"
+          @getBackendID="backendID = $event"
           :count="amount++"
           :name="results.name"
           :image="results.image"
@@ -12,6 +15,14 @@
         ></new-temtem-list>
       </div>
     </div>
+    <tracker
+      class="tracker"
+      v-if="temtemName !== String"
+      :temtemValue="temtemValue"
+      :temtemName="temtemName"
+      :backendID="backendID"
+    ></tracker>
+    <div v-if="temtemName !== String">Currently Hunting: {{ temtemName }}</div>
     <luma-footer></luma-footer>
   </div>
 </template>
@@ -20,13 +31,15 @@
 import lumaHeader from "./../components/lumaHeader.vue";
 import lumaFooter from "./../components/lumaFooter.vue";
 import newTemtemList from "./../components/newTemtemList.vue";
+import tracker from "./../components/tracker.vue"
 import axios from "axios";
 
 export default {
   components: {
     lumaHeader,
     lumaFooter,
-    newTemtemList
+    newTemtemList,
+    tracker
   },
 
   data() {
@@ -37,11 +50,16 @@ export default {
         image: []
       },
       amount: 0,
+      temtemName: String,
+      temtemValue: Number,
+      backendID: Number,
       props: {
         count: Number,
         name: String,
         image: String,
-        value: Number
+        value: Number,
+        temtemValue: Number,
+        backendID: Number
       }
     };
   },
