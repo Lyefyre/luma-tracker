@@ -31,7 +31,7 @@
 import lumaHeader from "./../components/lumaHeader.vue";
 import lumaFooter from "./../components/lumaFooter.vue";
 import newTemtemList from "./../components/newTemtemList.vue";
-import tracker from "./../components/tracker.vue"
+import tracker from "./../components/tracker.vue";
 import axios from "axios";
 
 export default {

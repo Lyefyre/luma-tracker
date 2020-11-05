@@ -1,8 +1,12 @@
 <template>
-  <div id="center">
-    <div id="imageContainer">
-      <p id="text">Luma Tracker!</p>
-    </div>
+  <div id="bar">
+    <b-navbar id="center">
+      <template slot="start">
+        <b-navbar-item href="main" class="text">
+          Hauptseite
+        </b-navbar-item>
+      </template>
+    </b-navbar>
   </div>
 </template>
 
@@ -11,14 +15,20 @@ export default {};
 </script>
 
 <style scoped>
-#center {
+#bar {
   width: 100%;
   height: 100%;
+  display: inline-block;
+  margin: auto;
+}
+
+#center {
   background-image: linear-gradient(90deg, green, lightgreen);
 }
 
-.image {
-  display: inline-block;
+.text {
+  color: lightgray;
+  font-weight: bold;
 }
 
 #imageContainer {
