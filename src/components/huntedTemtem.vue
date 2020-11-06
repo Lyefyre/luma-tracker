@@ -2,9 +2,7 @@
   <div v-if="this.huntValue > 0">
     <div id="square">
       <img v-bind:src="image[count]" />
-      <b-button class="is-dark space" @click="resumeHunt()">{{
-        name[count]
-      }}</b-button>
+      <b-button class="space" @click="resumeHunt()">{{ name[count] }}</b-button>
       <div>{{ "Counter: " + value[count] }}</div>
     </div>
   </div>
@@ -48,6 +46,7 @@ export default {
 
 #square {
   border: solid;
+  border-color: lightcyan;
   width: 130px;
   height: 130px;
   padding: 5px;

@@ -6,11 +6,11 @@
     />
     <luma-header></luma-header>
     <div class="title">Luma-Tracker</div>
-    <div>
+    <div class="desc">
       Welcome! This is the Luma Tracking App, made by Valentin Schär! Below, you
       can either start a new hunt or resume an already existing hunt.
     </div>
-    <div>
+    <div class="desc">
       If you have any questions, please contact the creator of this website.
     </div>
     <div class="row">
@@ -28,11 +28,7 @@
       </div>
     </div>
     <div class="buttons">
-      <b-button
-        class="button is-dark is-large"
-        slot="trigger"
-        @click="loadHunt()"
-      >
+      <b-button class="button is-large" slot="trigger" @click="loadHunt()">
         Resume existing hunt
       </b-button>
       <b-button class="is-info is-large" @click="routing()"
@@ -74,11 +70,12 @@ export default {
 #main {
   text-align: center;
   margin: 0px;
-  background: lightgray;
+  background: #42516b;
 }
 
 .title {
   font-size: 4em;
+  color: lightgray;
 }
 
 .buttons {
@@ -105,5 +102,9 @@ export default {
   float: left;
   margin: 0;
   padding: 5px;
+}
+
+.desc {
+  color: lightgray;
 }
 </style>

@@ -2,7 +2,7 @@
   <div id="overview">
     <luma-header></luma-header>
     <div class="container" v-if="temtemName == String">
-      <div>Select the Temtem you want to hunt</div>
+      <div class="desc">Select the Temtem you want to hunt</div>
       <div class="square" :key="key" v-for="key in this.results.name">
         <new-temtem-list
           @selectedTemtem="temtemName = $event"
@@ -89,6 +89,7 @@ export default {
 #overview {
   margin: 0px;
   text-align: center;
+  background-color: #42516b;
 }
 
 .container {
@@ -100,5 +101,9 @@ export default {
 
 .square {
   display: inline-block;
+}
+
+.desc {
+  color: lightcyan;
 }
 </style>

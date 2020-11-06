@@ -3,7 +3,7 @@
     <b-navbar id="center">
       <template slot="start">
         <b-navbar-item href="main" class="text">
-          Hauptseite
+          Main Page
         </b-navbar-item>
       </template>
     </b-navbar>
@@ -23,7 +23,7 @@ export default {};
 }
 
 #center {
-  background-image: linear-gradient(90deg, green, lightgreen);
+  background-image: linear-gradient(90deg, black, darkgray);
 }
 
 .text {

@@ -14,7 +14,7 @@ export default {};
   margin: auto;
   width: 100%;
   height: fit-content;
-  background-image: linear-gradient(90deg, darkgreen, green);
+  background-image: linear-gradient(90deg, black, darkgray);
 }
 
 #text {
@@ -23,5 +23,6 @@ export default {};
   font-size: 32px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
+  color: lightgray;
 }
 </style>
